@@ -1,0 +1,200 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap"); */
+@font-face {
+    font-family: "Spartan Regular";
+    src: url("./font/Spartan-Regular.woff2") format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Spartan SemiBold";
+    src: url("./font/Spartan-SemiBold.woff2") format("woff2");
+    font-weight: bolder;
+}
+@font-face {
+    font-family: "Spartan Bold";
+    src: url("./font/Spartan-Bold.woff2") format("woff2");
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    /* typography */
+    font-size: 15px;
+    font-family: "Spartan Regular", sans-serif;
+}
+body {
+    /* mobile and desktop widths */
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    /* colors */
+    --primary-magenta: hsl(300, 43%, 22%);
+    --primary-pink: hsl(333, 80%, 67%);
+
+    --neutral-dark-magenta: hsl(303, 10%, 53%);
+    --neutral-grayish-magenta: hsl(300, 24%, 96%);
+    --neutral-white: hsl(0, 0%, 100%);
+
+    min-height: 100vh;
+
+    /* center main */
+    display: grid;
+    place-content: center;
+}
+
+main {
+    display: grid;
+    gap: 2em;
+    margin-bottom: 2em;
+    width: 90%;
+    margin: 0 auto;
+    /* overflow: hidden; */
+}
+.bg_pattern1 {
+    position: absolute;
+    width: 40%;
+}
+.bg_pattern {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 77%;
+    z-index: -10;
+}
+#top_section {
+    display: flex;
+    gap: 2em;
+}
+
+#description {
+    width: 50%;
+    padding-right: 10em;
+}
+#description h1 {
+    font-family: "Spartan Bold", sans-serif;
+    font-size: 3em;
+    padding-right: 3em;
+    color: var(--primary-magenta);
+    margin-bottom: 1rem;
+}
+#description p {
+    line-height: 1.5em;
+}
+#star_review {
+    display: grid;
+    width: 50%;
+}
+.review {
+    background-color: var(--neutral-grayish-magenta);
+    display: flex;
+    gap: 2em;
+    padding: 0em 3em;
+    border-radius: 12px;
+    width: 80%;
+    align-items: center;
+    height: 70%;
+}
+.review:nth-child(2) {
+    margin-left: 3rem;
+}
+
+.review:last-of-type {
+    margin-left: 7rem;
+}
+
+.review p {
+    color: var(--primary-magenta);
+    font-family: "Spartan Bold", sans-serif;
+}
+
+/* Bottom section */
+#bottom_section {
+    display: flex;
+    gap: 2em;
+}
+
+#bottom_section .card {
+    background-color: var(--primary-magenta);
+    border-radius: 12px;
+    padding: 2em;
+    color: var(--neutral-white);
+    display: grid;
+    gap: 1em;
+    height: 250px;
+    width: 388px;
+}
+#bottom_section .card:nth-child(2) {
+    margin-top: 1rem;
+}
+#bottom_section .card:last-of-type {
+    margin-top: 2rem;
+}
+
+#bottom_section .card .name {
+    align-items: center;
+}
+
+#bottom_section .card .name p {
+    color: var(--primary-pink);
+    margin-top: 5px;
+}
+.avatar img {
+    border-radius: 50%;
+    width: 40px;
+}
+
+.name_image {
+    display: flex;
+    gap: 1em;
+}
+.testimony {
+    line-height: 1.5em;
+}
+.attribution {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1rem;
+}
+
+@media (max-width: 375px) {
+    #top_section,
+    #bottom_section {
+        flex-direction: column;
+    }
+    #description,
+    #star_review {
+        width: auto;
+        text-align: center;
+    }
+    #description {
+        padding: 0;
+    }
+    #description h1 {
+        font-size: 2em;
+        padding: 0;
+    }
+    #star_review {
+        gap: 1rem;
+    }
+    .review {
+        flex-direction: column;
+        gap: 0rem;
+        height: 100%;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    .review:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .review:last-of-type {
+        margin-left: 0;
+    }
+
+    #bottom_section .card {
+        width: 100%;
+    }
+}
